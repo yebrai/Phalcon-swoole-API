@@ -1,4 +1,4 @@
-# Use official PHP 8.0-FPM image as base
+# Use the official PHP image as a base
 FROM php:8.0-fpm
 
 # Install necessary dependencies for Phalcon, Swoole, and Composer
@@ -10,7 +10,8 @@ RUN apt-get update && apt-get install -y \
     git \
     unzip \
     && pecl install swoole \
-    && docker-php-ext-enable
+    && docker-php-ext-enable swoole \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Composer globally
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer

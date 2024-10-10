@@ -5,7 +5,19 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    volumes:
+      - ./app/src:/var/www/app  # Adjusted to point to the correct src path
+      - ./config:/var/www/config
+    ports:
+      - "9000:9000"
+    depends_on:
+      - swoole
+
+  swoole:
+    build:
+      context: .
+      dockerfile: swoole/Dockerfile
+    volumes:
+      - ./swoole:/var/www
     ports:
       - "9501:9501"
-    volumes:
-      - .:/var/www
