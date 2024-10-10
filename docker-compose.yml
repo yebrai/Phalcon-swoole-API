@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  phalcon-swoole:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9501:9501"
+    volumes:
+      - .:/var/www

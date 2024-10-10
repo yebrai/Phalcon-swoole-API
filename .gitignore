@@ -1,0 +1,33 @@
+# Composer dependencies
+/vendor/
+
+# PhpStorm project files
+/.idea/
+/*.iml
+
+# Environment and configuration files
+.env
+.env.local
+.env.*.local
+
+# Logs and cache
+*.log
+/logs/
+/cache/
+
+# PHPUnit test results
+/test-results/
+/phpunit.xml
+/phpunit.xml.dist
+
+# Docker files
+docker-compose.override.yml
+docker-compose.override.yaml
+*.dockerfile
+/docker/
+
+# Node.js dependencies (if you are using Node for frontend)
+/node_modules/
+
+# Exclude build artifacts (optional)
+/build/

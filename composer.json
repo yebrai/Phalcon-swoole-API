@@ -1,0 +1,16 @@
+{
+  "require": {
+    "phalcon/phalcon": "^5.0",
+    "swoole/ide-helper": "^4.5"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "post-install-cmd": [
+      "Phalcon\\DevTools\\Installer::install"
+    ],
+    "post-update-cmd": [
+      "Phalcon\\DevTools\\Installer::install"
+    ]
+  }
+}
